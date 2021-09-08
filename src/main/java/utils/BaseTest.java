@@ -7,17 +7,14 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import test.java.testData.constants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import main.java.utils.excelReader;
-import main.java.utils.propertiesReader;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
-import java.util.Properties;
 
 public class BaseTest {
 
@@ -93,6 +90,14 @@ public class BaseTest {
                 + excelName;
         excel = new excelReader(path);
         String[][] data = excel.getDataFromSheet(sheetName, excelName);
+        return data;
+    }
+
+    public String getCell(String excelName, String sheetName, int rowNum) {
+        String path = System.getProperty("user.dir") + "/src/test/java/testData/"
+                + excelName;
+        excel = new excelReader(path);
+        String data = excel.getCellData(sheetName, excelName, rowNum);
         return data;
     }
 }
