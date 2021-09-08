@@ -10,10 +10,9 @@ import static org.testng.Assert.assertTrue;
 public class SearchResultsPageEvents {
     fetchElement FetchElement = new fetchElement();
 
-    public void addDressToCart() throws InterruptedException {
+    public void addDressToCart() {
         Actions action = new Actions(driver);
         action.moveToElement(FetchElement.getWebElement("XPATH", searchResultsPageElements.summerDresses)).perform();
-        Thread.sleep(3000);
         FetchElement.getWebElement("XPATH", cartPageElements.addToCart).click();
     }
 

@@ -92,4 +92,12 @@ public class BaseTest {
         String[][] data = excel.getDataFromSheet(sheetName, excelName);
         return data;
     }
+
+    public String getCell(String excelName, String sheetName, int rowNum) {
+        String path = System.getProperty("user.dir") + "/src/test/java/testData/"
+                + excelName;
+        excel = new excelReader(path);
+        String data = excel.getCellData(sheetName, excelName, rowNum);
+        return data;
+    }
 }
