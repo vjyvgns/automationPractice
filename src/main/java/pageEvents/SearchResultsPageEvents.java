@@ -12,11 +12,11 @@ public class SearchResultsPageEvents {
 
     public void addDressToCart(){
         Actions action = new Actions(driver);
-        action.moveToElement(FetchElement.getWebElement("xpath", searchResultsPageElements.summerDresses)).perform();
-        FetchElement.getWebElement("xpath", cartPageElements.addToCart).click();
+        action.moveToElement(FetchElement.getWebElement("XPATH", searchResultsPageElements.summerDresses)).perform();
+        FetchElement.getWebElement("XPATH", cartPageElements.addToCart).click();
     }
 
     public void verifyCartAddedMessage(){
-        assertTrue(FetchElement.getWebElement("xpath",cartPageElements.productAddedMessage).isDisplayed());
+        assertTrue(FetchElement.getWebElement("XPATH",cartPageElements.productAddedMessage).isDisplayed());
     }
 }

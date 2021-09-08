@@ -11,31 +11,32 @@ import java.io.IOException;
 
 public class purchaseSummerDress extends BaseTest {
 
-    @DataProvider(name="testData")
-    public Object[][] getTestData(){
-        String[][] testRecords = getData("TestData.xlsx", "LoginTestData");
-        return testRecords;
-    }
+//    @DataProvider(name="testData")
+//    public Object[][] getTestData(){
+//        String[][] testRecords = getData("TestData.xlsx", "LoginTestData");
+//        return testRecords;
+//    }
 
-    @Test(dataProvider = "testData")
-    public void searchForSummerAddress(String emailAddress, String password) throws IOException {
+    @Test
+    public void searchForSummerAddress() throws IOException {
         homePageEvents HomePageObj = new homePageEvents();
         SearchResultsPageEvents SearchResultsPageObj = new SearchResultsPageEvents();
         cartPageEvents cartPageObj = new cartPageEvents();
 
-        HomePageObj.enterSearchValue("Summer Dress");
-
-        HomePageObj.clickOnSearchButton();
-
-        SearchResultsPageObj.addDressToCart();
-
-        SearchResultsPageObj.verifyCartAddedMessage();
-
-        cartPageObj.clickOnProceedToCheckout();
-
-        cartPageObj.clickOnProceedToCheckoutSummary();
-
-        cartPageObj.verifyLoginPage();
+        HomePageObj.clickCart();
+//        HomePageObj.enterSearchValue("Summer Dress");
+//
+//        HomePageObj.clickOnSearchButton();
+//
+//        SearchResultsPageObj.addDressToCart();
+//
+//        SearchResultsPageObj.verifyCartAddedMessage();
+//
+//        cartPageObj.clickOnProceedToCheckout();
+//
+//        cartPageObj.clickOnProceedToCheckoutSummary();
+//
+//        cartPageObj.verifyLoginPage();
 
     }
 }

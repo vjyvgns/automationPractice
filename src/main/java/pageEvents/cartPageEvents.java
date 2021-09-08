@@ -13,14 +13,14 @@ public class cartPageEvents {
 
 
     public void clickOnProceedToCheckout(){
-        FetchElement.getWebElement("xpath",cartPageElements.proceedToCheckOutButton).click();
+        FetchElement.getWebElement("XPATH",cartPageElements.proceedToCheckOutButton).click();
     }
 
     public void clickOnProceedToCheckoutSummary(){
-        FetchElement.getWebElement("xpath",cartPageElements.ProceedToCheckOutButtonSummary).click();
+        FetchElement.getWebElement("XPATH",cartPageElements.ProceedToCheckOutButtonSummary).click();
     }
 
     public void verifyLoginPage(){
-        assertTrue(FetchElement.getWebElement("xpath",cartPageElements.loginFrame).isDisplayed());
+        assertTrue(FetchElement.getWebElement("XPATH",cartPageElements.loginFrame).isDisplayed());
     }
 }

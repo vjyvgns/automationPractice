@@ -74,7 +74,7 @@ public class BaseTest {
 
     public void setUpDriver(String browser){
         if (browser.equalsIgnoreCase("Chrome")) {
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + File.separator + "drivers" + File.separator + "chromedriver_mac");
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + File.separator + "drivers" + File.separator + "chromedriver.exe");
             driver = new ChromeDriver();
         } else if(browser.equalsIgnoreCase("Firefox")){
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + File.separator + "drivers" + File.separator + "geckodriver");
