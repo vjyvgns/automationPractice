@@ -10,8 +10,6 @@ import static org.testng.Assert.assertTrue;
 public class cartPageEvents {
     fetchElement FetchElement = new fetchElement();
 
-
-
     public void clickOnProceedToCheckout(){
         FetchElement.getWebElement("XPATH",cartPageElements.proceedToCheckOutButton).click();
     }
