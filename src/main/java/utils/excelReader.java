@@ -1,13 +1,14 @@
 package main.java.utils;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-
-import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
 
 public class excelReader {
 
@@ -56,10 +57,10 @@ public class excelReader {
                     XSSFCell cell = rows.getCell(j);
 
                     // If cell of type String , then this if condition will work
-                    if (cell.getCellType() == Cell.CELL_TYPE_STRING)
+                    if (cell.getCellType() == CellType.STRING)
                         dataSets[i - 1][j] = cell.getStringCellValue();
                         // If cell of type Number , then this if condition will work
-                    else if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
+                    else if (cell.getCellType() == CellType.NUMERIC) {
                         String cellText = String.valueOf(cell.getNumericCellValue());
                         dataSets[i - 1][j] = cellText;
                     } else
@@ -93,9 +94,9 @@ public class excelReader {
             row = sheet.getRow(rowNum - 1);
 
             XSSFCell cell = row.getCell(col_Num);
-            if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
+            if (cell.getCellType() == CellType.STRING) {
                 return cell.getStringCellValue();
-            } else if (cell.getCellType() == Cell.CELL_TYPE_BLANK) {
+            } else if (cell.getCellType() == CellType.BLANK) {
                 return "";
             }
 
